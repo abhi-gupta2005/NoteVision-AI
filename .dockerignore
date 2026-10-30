@@ -1,0 +1,11 @@
+.git
+.venv
+venv
+__pycache__
+.pytest_cache
+data/uploads/*
+data/*.sqlite3*
+exports/*
+logs/*
+.vscode
+*.zip

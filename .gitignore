@@ -1,0 +1,51 @@
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Virtual environments -------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# --- Editors / OS -----------------------------------------------------------
+# .vscode/ is generated per machine by scripts/setup (template in vscode-config/)
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- NoteVision AI runtime data (never commit user recordings or reports) ---
+data/uploads/*
+!data/uploads/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/*.sqlite3
+data/*.sqlite3-journal
+data/*.sqlite3-wal
+data/*.sqlite3-shm
+exports/*
+!exports/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# --- Model files: the small bundled Basic Pitch ONNX model IS tracked; keep large
+#     downloads (Demucs weights, custom models) out of git.
+models/*
+!models/README.md
+!models/basic_pitch/
+models/basic_pitch/*
+!models/basic_pitch/nmp.onnx
+!models/basic_pitch/LICENSE
+!models/basic_pitch/NOTICE.md
+
+# --- Secrets ---------------------------------------------------------------
+.env
+.streamlit/secrets.toml

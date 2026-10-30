@@ -1,0 +1,22 @@
+# Optional extras for NoteVision AI. None of these are required for the core
+# application. Install only what you need:
+#
+#     pip install -r requirements-optional.txt
+#
+# --- Source separation for "Full music recording" mode ------------------------
+# Demucs (Meta) separates a mixed song into vocals / bass / drums / other so
+# that each stem can be transcribed separately. It requires PyTorch (large
+# download, CPU works but is slow: expect ~1-3x the song length on a laptop CPU).
+# GPU acceleration is used only if a CUDA-enabled torch build is installed AND
+# torch.cuda.is_available() reports True at runtime.
+torch>=2.1
+torchaudio>=2.1
+demucs>=4.0.1
+
+# --- Crepe (neural monophonic pitch tracker, alternative to pYIN) -------------
+# Needs TensorFlow; only use on Python <= 3.11.
+# crepe>=0.0.16
+# tensorflow<2.16
+
+# --- Static chart export for Plotly figures (not needed: PDF uses matplotlib) -
+# kaleido

@@ -1,0 +1,36 @@
+# NoteVision AI - core runtime dependencies
+#
+# Supported Python versions: 3.10 - 3.14 (the test-suite was run on 3.10, 3.11 and 3.14).
+# Exact versions that were verified end-to-end on 3.11 are in requirements-lock-py311.txt.
+#
+# Install:  pip install -r requirements.txt
+# The Spotify Basic Pitch model ships inside the repository as an ONNX file
+# (models/basic_pitch/nmp.onnx) and runs through onnxruntime - no TensorFlow,
+# no separate model download.
+
+# --- numerical / signal processing -------------------------------------------
+# numpy: pip picks the newest build for your interpreter (2.2.x on Python 3.10,
+# 2.3+ on 3.11-3.14). The upper bound follows numba's supported range.
+numpy>=1.26,<2.6
+scipy>=1.11,<2.0
+librosa>=0.10.2,<0.12
+soundfile>=0.12.1,<0.15
+audioread>=3.0.1,<4.0
+numba>=0.59
+
+# --- model inference / evaluation ---------------------------------------------
+onnxruntime>=1.17,<2.0      # runs models/basic_pitch/nmp.onnx (CPU)
+mir-eval>=0.7               # precision / recall / timing metrics (src/evaluation.py)
+
+# --- data / UI / charts --------------------------------------------------------
+pandas>=2.2,<4.0
+streamlit>=1.40,<2.0
+plotly>=5.24,<8.0
+matplotlib>=3.8,<4.0
+
+# --- exports -------------------------------------------------------------------
+openpyxl>=3.1,<4.0
+reportlab>=4.2,<6.0
+
+# --- testing -------------------------------------------------------------------
+pytest>=8.0,<10.0

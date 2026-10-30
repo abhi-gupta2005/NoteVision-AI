@@ -1,0 +1,9 @@
+# Streamlit configuration (applies locally and on Streamlit Community Cloud).
+[server]
+maxUploadSize = 200          # MB per uploaded file; config/settings.py validates duration and size too
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#2a78d6"

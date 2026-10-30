@@ -1,0 +1,11 @@
+# Normalise line endings; keep binaries and Windows scripts intact.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.wav binary
+*.mp3 binary
+*.flac binary
+*.onnx binary
+*.png binary
+*.pdf binary
+*.xlsx binary
